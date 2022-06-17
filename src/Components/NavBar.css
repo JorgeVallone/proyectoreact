@@ -1,0 +1,60 @@
+*{
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: cornflowerblue;
+}
+
+.navFather{
+    width: 1000px;
+    margin: 30px auto;
+    background-color: white;
+
+}
+.navFather ul{
+    list-style: none;
+}
+
+.navUnorderedList > li{
+position: relative;
+display: inline-block;
+
+}
+.navUnorderedList > li > a{
+display: block;
+padding: 15px 20px;
+color: brown;
+font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+text-decoration: none;
+}
+.navUnorderedList li a:hover {
+    color: blue;
+    transition: all .3s;
+}
+
+/*Submenu*/
+.navUlistSubmenu{
+position: absolute;
+background-color: white;
+width: 120%;
+visibility: hidden;
+opacity: 0;
+transition: opacity 1.5s;
+}
+.navUlistSubmenu li a{
+    display: block;
+    padding: 15px;
+    color:brown;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+
+}
+.navUnorderedList li:hover .navUlistSubmenu{
+    visibility: visible;
+    opacity: 1;
+}
