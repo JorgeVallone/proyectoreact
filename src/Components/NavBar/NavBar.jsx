@@ -1,4 +1,5 @@
 
+import CartWidget from '../CartWidget/Index';
 import './NavBar.css';
 
 const NavBar = () =>
@@ -18,12 +19,11 @@ const NavBar = () =>
              </ul>
             </li>
            <li><a href="">Conctactos</a></li>
-
-        
-
-
+          
+          <CartWidget/> 
+            
+           
             </ul>
-
         </nav>
 
 
