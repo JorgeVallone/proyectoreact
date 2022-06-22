@@ -1,5 +1,5 @@
 import React from 'react'
-import { FcRight, FcRightDown, FcShop } from "react-icons/fc";;
+import { FcShop } from "react-icons/fc";;
 
 
 
