@@ -1,0 +1,30 @@
+.containerButton{
+    border: none;
+    background: rgb(122, 191, 255);
+    text-align: center;
+    padding: 18px 42px;
+    height: 40vh;
+    width: 400px;
+}
+.countButton{
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 9px 22px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    
+}
+button {
+    background-color: rgb(243, 243, 243);
+    color: black;
+    border: 2px solid #004b02; /* Green */
+    font-size: 32px;
+    margin: 4px 2px;
+    width: 250px; 
+    border-radius: 12px;
+}
+button:hover {background-color: #3e8e41}
