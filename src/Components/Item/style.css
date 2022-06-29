@@ -1,19 +1,23 @@
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.411);
     transition: 0.3s;
-    width: 40%;
+    width: 20%;
   }
 
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   }
 
-  .container {
+  .container div {
     padding: 5px 16px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    float: left;
     
     
-    
+   
   }
   img{
     height: 250px;
@@ -25,11 +29,11 @@
     outline: 2;
     padding: 12px;
     color: rgb(168, 2, 2);
-    background-color: rgb(0, 36, 153);
+    background-color: rgb(16, 54, 179);
     text-align: center;
     cursor: pointer;
     width: 100%;
-    font-size: 18px;
+    font-size: 20px;
   }
   
   .card button:hover {

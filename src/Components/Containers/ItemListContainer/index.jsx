@@ -2,12 +2,13 @@ import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
 import ItemList from '../../ItemList'
+import Loader from '../../Loader/Loader'
 
 
 
 const ItemListContainer = ({greeting}) => {
   
-  const [productos, setProductos] = useState(null)
+  const [productos, setProductos] = useState([])
   
   useEffect(()=> {
     const getProductos = async() => {
@@ -30,10 +31,10 @@ const ItemListContainer = ({greeting}) => {
   return (
     <div>
         <h1>{greeting}</h1>
-      {productos ?
+      {productos.length !==0 ?
       <ItemList products={productos}/>
     :
-    null
+    <Loader/>
       }
     </div>
   )
