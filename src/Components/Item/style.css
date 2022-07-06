@@ -1,14 +1,25 @@
 .cart{
   background-color: rgb(243, 243, 243);
     color: black;
-    border: 2px solid #2410d6; /* Green */
-    font-size: 32px;
     margin: 15px 20px;
     width: 330px; 
     border-radius: 15px;
     display: inline-flex;
-    height: 260px;
+   
 
 }
 .cart:hover {background-color: #17046d;
 color: white;}
+
+.container-detail {
+  position: relative;
+  margin: 50px;
+}
+.image{
+  text-align: center;
+  width: 50%;
+  padding: 30px;
+}
+.productDescription{
+  text-align: justify;
+}

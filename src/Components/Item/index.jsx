@@ -16,7 +16,11 @@ navigate(`/detail/${product.id}`)
     <div  
      onClick={handleDetail}>
       
-    {product.title}
+      <div className='container-detail'>
+            <h1>{product.title}</h1>
+            <img className='image'src={product.image} alt="product-detail" />
+           
+        </div>
        
     
     </div>
