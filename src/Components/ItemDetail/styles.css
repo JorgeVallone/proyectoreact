@@ -1,0 +1,12 @@
+.container-detail {
+    position: relative;
+    margin: 50px;
+}
+.image{
+    text-align: center;
+    width: 50%;
+    padding: 30px;
+}
+.productDescription{
+    text-align: justify;
+}

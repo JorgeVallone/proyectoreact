@@ -1,6 +1,7 @@
-
+import React from 'react';
 import CartWidget from '../CartWidget/Index';
 import './NavBar.css';
+import { Link } from 'react-router-dom';
 
 const NavBar = () =>
 {
@@ -9,24 +10,17 @@ const NavBar = () =>
        
         <nav className='navFather'>
             <ul className='navUnorderedList'>
-           <li><a href="#">Inicio</a></li>
-           <li><a href="#">Nosotros</a></li>
-           <li><a href="#">Servicios</a>
-             <ul className='navUlistSubmenu'> 
-               <li><a href="#">Envio a Domicilio</a></li>
-               <li><a href="#">Envio a Sucursal</a></li>
-               <li><a href="#">Retiro en Delivery Point</a></li>
-             </ul>
-            </li>
-           <li><a href="">Conctactos</a></li>
-          
+           <li><Link to='/'>Home</Link></li>
+           <li><Link to='/category/electronics'>Electronics</Link></li>
+           <li><Link to='/category/jewelery'>Jewelery</Link></li>
+           <li><Link to="/category/women's clothing">Women's clothing</Link></li>
+          <li><Link to="/category/men's clothing">Men's clothing</Link></li>  
+          <li className ='cartWidgetImage'>
           <CartWidget/> 
-            
-           
+          </li>
+          
             </ul>
         </nav>
-
-
 
     )
 

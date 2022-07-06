@@ -11,9 +11,11 @@ body{
 }
 
 .navFather{
-    width: 1000px;
+    width: 100%;
     margin: 30px auto;
     background-color: white;
+    display: flex;
+    justify-content: space-between;
 
 }
 .navFather ul{
@@ -59,3 +61,8 @@ transition: opacity 1.5s;
     opacity: 1;
 }
 
+/*CartWidget*/
+.cartWidgetImage{
+  size: 32px;
+  left: 40%;
+}

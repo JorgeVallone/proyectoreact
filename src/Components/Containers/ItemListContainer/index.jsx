@@ -1,22 +1,29 @@
 import React from 'react'
 import { useState } from 'react'
 import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
 import ItemList from '../../ItemList'
 import Loader from '../../Loader/Loader'
 
 
 
-const ItemListContainer = ({greeting}) => {
-  
+const ItemListContainer = ({ greeting }) => {
+
   const [productos, setProductos] = useState([])
-  
-  useEffect(()=> {
-    const getProductos = async() => {
+  const [productosFiltrados, setProductosFiltrados] = useState([])
+
+  const params = useParams()
+
+  console.log(params);
+
+  useEffect(() => {
+
+    const getProductos = async () => {
       try {
-        const response = await fetch('/mocks/data.json');
-        const data = await response.json();
-        console.log(data);
-        setProductos(data); 
+        const response = await fetch('https://fakestoreapi.com/products');
+        const data = await response.json()
+        setProductos(data);
+        setProductosFiltrados(data);
       } catch (error) {
         console.log("Hubo un error:");
         console.log(error);
@@ -24,22 +31,27 @@ const ItemListContainer = ({greeting}) => {
     }
     getProductos()
   }, [])
-  
-  
+
+  useEffect(() => {
+    if (params?.categoryId) {
+      const productosFiltrados = productos.filter(producto => producto.category === params.categoryId)
+      setProductosFiltrados(productosFiltrados)
+    } else {
+      setProductosFiltrados(productos)
+    }
+  }, [params, productos])
+
   console.log(productos);
-  
+
   return (
     <div>
-        <h1>{greeting}</h1>
-      {productos.length !==0 ?
-      <ItemList products={productos}/>
-    :
+      {productos.length !== 0 ?
+        <ItemList products={productosFiltrados} />
+        :
     <Loader/>
       }
     </div>
   )
 }
-
-
 
 export default ItemListContainer

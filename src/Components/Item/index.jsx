@@ -1,26 +1,28 @@
 import React from 'react'
 import './style.css';
+ import { useNavigate } from 'react-router-dom';
 
 const Item = ({product}) => {
+
+const navigate = useNavigate();
+
+const handleDetail = () => {
+console.log("navega hacia el detail");
+navigate(`/detail/${product.id}`)
+
+}
   return (
-
- <div className='container'>
-        
-
-  <div className='card'>
-  <img src={product.image} alt="Avatar"/>
-    <div>
-     <h4>{product.title}</h4> 
-     <p>{product.id}</p> 
-     <p>{product.price}</p> 
-     <p><button>Add to Cart</button></p>
+  <div className='cart'>
+    <div  
+     onClick={handleDetail}>
+      
+    {product.title}
+       
+    
     </div>
   </div> 
- </div>  
     
-    
-  );
+    )
 };
-
 export default Item
 
