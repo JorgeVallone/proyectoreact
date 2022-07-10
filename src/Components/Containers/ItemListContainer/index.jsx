@@ -4,6 +4,8 @@ import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import ItemList from '../../ItemList'
 import Loader from '../../Loader/Loader'
+import InputCount from '../../InputCount/InputCount'
+import ButtonCount from '../../ButtonCount'
 
 
 
@@ -43,9 +45,20 @@ const ItemListContainer = ({ greeting }) => {
 
   console.log(productos);
 
+  const handleConfirm = (quantity) => {
+    console.log("Se agrego la cantidad:" + quantity);
+  }
+  const type = "input"
+
+  const Count = type === "button" ? ButtonCount : InputCount;
+
+
+
   return (
     <div>
       {productos.length !== 0 ?
+
+      
         <ItemList products={productosFiltrados} />
         :
     <Loader/>
