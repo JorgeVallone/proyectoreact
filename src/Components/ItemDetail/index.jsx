@@ -1,6 +1,8 @@
 import React from 'react';
+import { useContext } from 'react';
 import { useState } from 'react';
 import { useNavigate } from 'react-router';
+import { Shop } from '../../context/ShopContext';
 import ButtonCount from '../ButtonCount';
 import './styles.css'
 
@@ -11,6 +13,8 @@ const ItemDetail = ({ product }) => {
     product.stock = 10;
     const [qtyAdded, setQtyAdded] = useState(0);
 
+    const {addItem} = useContext (Shop)
+
     const handleConfirm = (qty) => {
         setQtyAdded(qty);
 
@@ -18,6 +22,7 @@ const ItemDetail = ({ product }) => {
     console.log(qtyAdded)
     
     const handleTerminate = () => {
+        addItem(product, qtyAdded)
         navigate('/cart')
 
     }
@@ -34,8 +39,12 @@ const ItemDetail = ({ product }) => {
             <ButtonCount onConfirm={handleConfirm} maxQuantity={product.stock} />
             :
             <button onClick={handleTerminate}>Terminar compra</button>
-        
-        }                                                                                                                                                                                                                                                                                                                                                                                               
+        }    
+
+        return(
+            <button onClick={handleTerminate}>Terminar compra</button>
+
+        )                                                                                                                                                                                                                                                                                                                                                                                           
         </div>
     )
 }

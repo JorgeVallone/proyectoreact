@@ -5,11 +5,13 @@ import ItemListContainer from './Components/Containers/ItemListContainer';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from './Components/NotFound';
 import Cart from './Components/Containers/Cart';
+import ShopProvider from './context/ShopContext';
 
 function App() {
 
 
   return (
+    <ShopProvider>
     <BrowserRouter>
     <NavBar />
     <Routes>
@@ -20,6 +22,8 @@ function App() {
       <Route path='*' element={<NotFound/>}/>
     </Routes>       
 </BrowserRouter>
+    </ShopProvider>
+
   );
 
 }
