@@ -14,19 +14,22 @@ console.log(cart);
 
   return (
     <tr>
-      
+       {cart.map(producto => {
 
-
-      {cart.map(producto => {
-
-        return <li key={producto.id}>{producto.title} <img src={producto.image} width='40px' alt={producto.title} />
+        return <tr>
+          
+          <th key={producto.id}> {producto.title} 
+            
+          
+          <img src={producto.image} width='40px' alt={producto.title} />
        
-      
-
-        <BsFillTrashFill size={30}/>
+       <button><BsFillTrashFill size={30}/> </button> 
+          </th>
+          </tr>
+ 
        
 
-      </li>
+      
       
    })}
   
