@@ -32,8 +32,14 @@ const ItemDetail = ({ product }) => {
     return (
         <div className='container-detail'>
             <h1>{product.title}</h1>
-            <img className='image'src={product.image} alt="product-detail" />
+            
+            <img className='image'src={product.image} alt={product.id}/>
+            <div>
+          
             <p className='productDescription'>{product.description}</p>
+
+            </div>
+           
             {!qtyAdded ?  
 
             <ButtonCount onConfirm={handleConfirm} maxQuantity={product.stock} />
@@ -41,10 +47,7 @@ const ItemDetail = ({ product }) => {
             <button onClick={handleTerminate}>Terminar compra</button>
         }    
 
-        return(
-            <button onClick={handleTerminate}>Terminar compra</button>
-
-        )                                                                                                                                                                                                                                                                                                                                                                                           
+                                                                                                                                                                                                                                                                                                                                                                                           
         </div>
     )
 }

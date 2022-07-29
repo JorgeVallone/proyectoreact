@@ -6,11 +6,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NotFound from './Components/NotFound';
 import Cart from './Components/Containers/Cart';
 import ShopProvider from './context/ShopContext';
+import ReturnTemprano from './Components/ReturnTemprano';
 
 function App() {
 
 
   return (
+    <div>
     <ShopProvider>
     <BrowserRouter>
     <NavBar />
@@ -23,7 +25,8 @@ function App() {
     </Routes>       
 </BrowserRouter>
     </ShopProvider>
-
+    
+    </div>
   );
 
 }
